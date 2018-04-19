@@ -1,6 +1,5 @@
 ## Project: Perception Pick & Place
 [//]: # (Image References)
-
 [image1]: ./writeup_images/no_filter.png
 [image2]: ./writeup_images/filtered.png
 ---
