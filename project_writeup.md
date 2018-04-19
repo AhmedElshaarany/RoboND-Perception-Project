@@ -40,7 +40,9 @@ The first step was to apply statistical outlier filtering to remove noise and ha
     <td class="tg-yw4l">0.77<br></td>
   </tr>
 </table>
+
 Below are two images that show the raw noisy cloud, and the filtered objects cloud
+
 ![alt text][image1]
 ![alt text][image2]
 #### 2. Complete Exercise 2 steps: Pipeline including clustering for segmentation implemented.  
