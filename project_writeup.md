@@ -10,6 +10,29 @@
 ### Filtering and RANSAC plane fitting
 The first step was to apply statistical outlier filtering to remove noise and have a cleaner point cloud by using a statistical outlier filer object from the PCL python library. The parameter values used for this part are summarized below:
 
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-us36{border-color:inherit;vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-us36">Filter<br></th>
+    <th class="tg-us36">Parameter<br></th>
+    <th class="tg-us36">Value</th>
+  </tr>
+  <tr>
+    <td class="tg-us36" rowspan="2">Statistical Outlier<br></td>
+    <td class="tg-us36">mean_k</td>
+    <td class="tg-us36">15</td>
+  </tr>
+  <tr>
+    <td class="tg-us36">std_dev_mul_thresh</td>
+    <td class="tg-us36">0.1<br></td>
+  </tr>
+</table>
+
 |Filter              | Parameter          | Value 
 |---------------------|--------------------|-------
 | Statistical Outlier 
