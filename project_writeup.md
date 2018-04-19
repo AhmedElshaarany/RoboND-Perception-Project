@@ -12,8 +12,9 @@ The first step was to apply statistical outlier filtering to remove noise and ha
 
 |Filter              | Parameter          | Value 
 |---------------------|--------------------|-------
-| Statistical Outlier | mean_k             | 15    
-| ^                   | std_dev_mul_thresh | 0.1   
+| Statistical Outlier 
+                      | mean_k             | 15    
+                      | std_dev_mul_thresh | 0.1   
 | Voxel Grid Downsampling | LEAF_SIZE | 0.01    
 | PassThrough Filter | axis_min | 0.6 
 |  | axis_max | 0.77 
