@@ -1,13 +1,21 @@
 ## Project: Perception Pick & Place
+[//]: # (Image References)
 
-## [Rubric](https://review.udacity.com/#!/rubrics/1067/view) Points
-### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
-
+[image1]: ./writeup_images/no_filter.png
+[image2]: ./writeup_images/filtered.png
 ---
-
-### Exercise 1, 2 and 3 pipeline implemented
-#### 1. Complete Exercise 1 steps. Pipeline for filtering and RANSAC plane fitting implemented.
-
+### Filtering and RANSAC plane fitting
+The first step was to apply statistical outlier filtering to remove noise and have a cleaner point cloud by using a statistical outlier filer object from the PCL python library. The parameter values used for this part are summarized below:
+| Filter              | Parameter          | Value |
+|---------------------|--------------------|-------|
+| Statistical Outlier | mean_k             | 15    |
+|                     || std_dev_mul_thresh | 0.1   |
+| Voxel Grid Downsampling | LEAF_SIZE | 0.01    |
+| PassThrough Filter | axis_min | 0.6 |
+| PassThrough Filter | axis_max | 0.77 |
+Below are two images that show the raw noisy cloud, and the filtered objects cloud
+![alt text][image1]
+![alt text][image2]
 #### 2. Complete Exercise 2 steps: Pipeline including clustering for segmentation implemented.  
 
 #### 2. Complete Exercise 3 Steps.  Features extracted and SVM trained.  Object recognition implemented.
