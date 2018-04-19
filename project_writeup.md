@@ -15,6 +15,7 @@ The first step was to apply statistical outlier filtering to remove noise and ha
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
 .tg .tg-us36{border-color:inherit;vertical-align:top}
+.tg .tg-yw4l{vertical-align:top}
 </style>
 <table class="tg">
   <tr>
@@ -31,17 +32,21 @@ The first step was to apply statistical outlier filtering to remove noise and ha
     <td class="tg-us36">std_dev_mul_thresh</td>
     <td class="tg-us36">0.1<br></td>
   </tr>
+  <tr>
+    <td class="tg-us36">Voxel Grid Downsampling</td>
+    <td class="tg-us36">LEAF_SIZE</td>
+    <td class="tg-us36">0.01</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l" rowspan="2">PassThrough Filter<br></td>
+    <td class="tg-yw4l">axis_min</td>
+    <td class="tg-yw4l">0.6</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">axis_max</td>
+    <td class="tg-yw4l">0.77<br></td>
+  </tr>
 </table>
-
-|Filter              | Parameter          | Value 
-|---------------------|--------------------|-------
-| Statistical Outlier 
-                      | mean_k             | 15    
-                      | std_dev_mul_thresh | 0.1   
-| Voxel Grid Downsampling | LEAF_SIZE | 0.01    
-| PassThrough Filter | axis_min | 0.6 
-|  | axis_max | 0.77 
-
 Below are two images that show the raw noisy cloud, and the filtered objects cloud
 ![alt text][image1]
 ![alt text][image2]
