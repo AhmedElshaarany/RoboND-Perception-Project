@@ -1,7 +1,11 @@
 ## Project: Perception Pick & Place
+
+
 [//]: # (Image References)
+
 [image1]: ./writeup_images/no_filter.png
 [image2]: ./writeup_images/filtered.png
+
 ---
 ### Filtering and RANSAC plane fitting
 The first step was to apply statistical outlier filtering to remove noise and have a cleaner point cloud by using a statistical outlier filer object from the PCL python library. The parameter values used for this part are summarized below:
