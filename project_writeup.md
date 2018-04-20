@@ -7,7 +7,11 @@
 [image2]: ./writeup_images/filtered.png
 [image3]: ./writeup_images/cluster.png
 [image4]: ./writeup_images/conf_mat_1.png
-
+[image5]: ./writeup_images/conf_mat_2.png
+[image6]: ./writeup_images/conf_mat_3.png
+[image7]: ./writeup_images/obj_det_1.png
+[image8]: ./writeup_images/obj_det_2.png
+[image9]: ./writeup_images/obj_det_3.png
 ---
 ### Filtering and RANSAC plane fitting
 The first step was to apply statistical outlier filtering to remove noise and have a cleaner point cloud by using a statistical outlier filer object from the PCL python library. The parameter values used for this part are summarized below:
@@ -164,24 +168,31 @@ The parameters used in feature extraction are stated in the table below:
 </table>
 
 To make the model robust, the number of training instances had to be large enough to provide acceptable detection accuracy. The training instances are then fed to the SVM model and trained to detect the objects for each world. Below are the normalized confusion matrices for each of the test worlds:
-
+#### Test World 1 Normalized Confusion Matrix
 ![alt text][image4]
+#### Test World 2 Normalized Confusion Matrix
+![alt text][image5]
+#### Test World 3 Normalized Confusion Matrix
+![alt text][image6]
 
 
+### Pick and Place Object Detection Results
+
+For all three tabletop setups (`test*.world`), object recognition was performed, and then the respective pick list (`pick_list_*.yaml`) was read. The output of the detection pipeline in RViz are shown in the images below:
+#### Test World 1 Object Detection Ouput
+![alt text][image7]
+#### Test World 2 Object Detection Ouput
+![alt text][image8]
+#### Test World 3 Object Detection Ouput
+![alt text][image9]
 
 
+Finally, the messages that would comprise a valid `PickPlace` request output them to `.yaml` format are generated in stored in the `ouput_yaml_files` directory.
 
-
-
-
-### Pick and Place Setup
-
-#### 1. For all three tabletop setups (`test*.world`), perform object recognition, then read in respective pick list (`pick_list_*.yaml`). Next construct the messages that would comprise a valid `PickPlace` request output them to `.yaml` format.
-
-And here's another image! 
-![demo-2](https://user-images.githubusercontent.com/20687560/28748286-9f65680e-7468-11e7-83dc-f1a32380b89c.png)
-
-Spend some time at the end to discuss your code, what techniques you used, what worked and why, where the implementation might fail and how you might improve it if you were going to pursue this project further.  
+### Discussion
+- As we can see from the output images above, the object detection pipeline was able to detect all objects in Test World 1 and 2, but missed the glue in Test World 3. This happens because the glue is obstructed by the book, and that makes it difficult to detect. One possible solution is to have the robot complete a full rotation around the table, and hence, be able to have a clear view of obstructed objects.
+- Even though the number of training instances for each dataset was high, the pipeline sometimes misdetected some of the objects. It is perhaps better to use a more complicated training model such as a Deep Neural Network to enhance detection, or simply take a majority vote over multiple detections.
+- Currently, the path planning for the picking and placing of the objects is working. However, due to friction parameter and weight issues with the objects, the Gazebo environmet is not allowing objects to be gripped by the gripper. This needs to be looked into further.
 
 
   
