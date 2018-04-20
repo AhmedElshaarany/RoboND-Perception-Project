@@ -12,6 +12,7 @@
 [image7]: ./writeup_images/obj_det_1.png
 [image8]: ./writeup_images/obj_det_2.png
 [image9]: ./writeup_images/obj_det_3.png
+
 ---
 ### Filtering and RANSAC plane fitting
 The first step was to apply statistical outlier filtering to remove noise and have a cleaner point cloud by using a statistical outlier filer object from the PCL python library. The parameter values used for this part are summarized below:
