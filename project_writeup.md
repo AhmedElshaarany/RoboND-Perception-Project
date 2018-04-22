@@ -171,7 +171,7 @@ The parameters used in feature extraction are stated in the table below:
   </tr>
   <tr>
     <td class="tg-us36">Color Bin Range</td>
-    <td class="tg-us36">[0,256]<br></td>
+    <td class="tg-us36">[0,255]<br></td>
   </tr>
     <tr>
     <td class="tg-us36">Normal Bin Range</td>
