@@ -1,4 +1,15 @@
 ## Project: Perception Pick & Place
+In this project,  we have the PR2 robot that is outfitted with an RGB-D sensor. This sensor however is a bit noisy, much like real sensors.
+
+Givena cluttered tabletop scenario, a perception pipeline must be implemented  to identify target objects from a so-called “Pick-List” in that particular order, pick up those objects and place them in corresponding dropboxes.
+
+The image below shows the setup for test world 1.
+
+![demo-1](https://user-images.githubusercontent.com/20687560/28748231-46b5b912-7467-11e7-8778-3095172b7b19.png)
+
+
+
+In following sections, each part of the pipeline is explained.
 
 
 [//]: # (Image References)
@@ -159,8 +170,12 @@ The parameters used in feature extraction are stated in the table below:
     <td class="tg-us36">32<br></td>
   </tr>
   <tr>
-    <td class="tg-us36">Bin Range</td>
+    <td class="tg-us36">Color Bin Range</td>
     <td class="tg-us36">[0,256]<br></td>
+  </tr>
+    <tr>
+    <td class="tg-us36">Normal Bin Range</td>
+    <td class="tg-us36">[-1,1]<br></td>
   </tr>
   <tr>
     <td class="tg-us36">Using_HSV</td>

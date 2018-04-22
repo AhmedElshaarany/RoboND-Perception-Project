@@ -5,7 +5,9 @@ from pcl_helper import *
 
 
 nbins=32
-bins_range=(0, 256)
+color_bins_range=(0, 256)
+normal_bins_range=(0, 256)
+
 
 
 def rgb_to_hsv(rgb_list):
@@ -38,9 +40,9 @@ def compute_color_histograms(cloud, using_hsv=False):
         channel_3_vals.append(color[2])
     
     # TODO: Compute histograms
-    channel_1_hist = np.histogram(channel_1_vals, bins=nbins, range=bins_range)
-    channel_2_hist = np.histogram(channel_2_vals, bins=nbins, range=bins_range)
-    channel_3_hist = np.histogram(channel_3_vals, bins=nbins, range=bins_range)
+    channel_1_hist = np.histogram(channel_1_vals, bins=nbins, range=color_bins_range)
+    channel_2_hist = np.histogram(channel_2_vals, bins=nbins, range=color_bins_range)
+    channel_3_hist = np.histogram(channel_3_vals, bins=nbins, range=color_bins_range)
 
     # TODO: Concatenate and normalize the histograms
     # Concatenate the histograms into a single feature vector
@@ -64,9 +66,9 @@ def compute_normal_histograms(normal_cloud):
         norm_z_vals.append(norm_component[2])
 
     # TODO: Compute histograms of normal values (just like with color)
-    norm_x_hist = np.histogram(norm_x_vals, bins=nbins, range=bins_range)
-    norm_y_hist = np.histogram(norm_y_vals, bins=nbins, range=bins_range)
-    norm_z_hist = np.histogram(norm_z_vals, bins=nbins, range=bins_range)
+    norm_x_hist = np.histogram(norm_x_vals, bins=nbins, range=normal_bins_range)
+    norm_y_hist = np.histogram(norm_y_vals, bins=nbins, range=normal_bins_range)
+    norm_z_hist = np.histogram(norm_z_vals, bins=nbins, range=normal_bins_range)
 
     # TODO: Concatenate and normalize the histograms
     hist_features = np.concatenate((norm_x_hist[0], norm_y_hist[0], norm_z_hist[0])).astype(np.float64)
