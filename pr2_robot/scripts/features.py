@@ -5,7 +5,7 @@ from pcl_helper import *
 
 
 nbins=32
-color_bins_range=(0, 255)
+color_bins_range=(0, 256)
 normal_bins_range=(-1, 1)
 
 def rgb_to_hsv(rgb_list):
